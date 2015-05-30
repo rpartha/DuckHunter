@@ -26,7 +26,7 @@ public class Framework extends Canvas {
      */
     private BufferedImage shootTheDuckMenuImg;    
     
-    public Framework ()
+    public Framework ()	
     {
         super();
         

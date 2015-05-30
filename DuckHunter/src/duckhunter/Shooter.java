@@ -4,10 +4,11 @@ import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
-import java.net.URL;
+import java.net.*;
 import java.util.*;
 import java.util.logging.*;
 import javax.imageio.ImageIO;
+import java.applet.*;
 
 public class Shooter {
 	private Random random;
@@ -105,7 +106,7 @@ public class Shooter {
 	 * @param gameTime gameTime of the game.
 	 * @param mousePosition current mouse position.
 	 */
-	public void update(long gameTime, Point mousePosition)
+	public void update(long gameTime, Point mousePosition) 
 	{
 		// Creates a new duck, if it's the time, and add it to the array list.
 		if(System.nanoTime() - Duck.lastDuckTime >= Duck.timeBetweenDucks)
@@ -154,6 +155,12 @@ public class Shooter {
 						score += ducks.get(i).score;
 
 						// Remove the duck from the array list.
+						try{
+							AudioClip clip = Applet.newAudioClip(new URL("http://cdn.hark.com/swfs/player_fb.swf?pid=gpgvpgyxzd"));
+							clip.play();
+						} catch(MalformedURLException m){
+							m.printStackTrace();
+						}
 						ducks.remove(i);
 
 						// We found the duck that player shoot so we can leave the for loop.
