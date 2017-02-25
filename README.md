@@ -1,2 +1,2 @@
 # DuckHunter
-DuckHunter shooter game 
+A JAVA game whose purporse is to shoot as many ducks as possible.
